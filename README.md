@@ -1,1 +1,1 @@
-# gh-actions
+# Setup básico de integracion continua usando GithubActions para una app React. 
