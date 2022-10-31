@@ -1,0 +1,19 @@
+name: Unit tests
+
+on: [workflow_dispatch]
+
+jobs:
+  realizar-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v3
+    
+      - uses: agustisera1/gh-actions/.github/workflows/setup.yml@main
+      - name: Setup proyecto (reusable workflow)
+
+      - run: npm test
+      - name: Correr unit tests
+
+
+    
