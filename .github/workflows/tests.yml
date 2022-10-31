@@ -17,5 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Instalar dependencias
+        run: npm install
+
       - name: Correr unit tests
         run: npm test
