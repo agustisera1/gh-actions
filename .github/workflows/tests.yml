@@ -1,14 +1,17 @@
 name: Unit tests
 
 on: [
-  workflow_dispatch,
-  pull_request
+  pull_request,
+  push,
+  workflow_dispatch
 ]
 
 jobs:
   realizar-setup:
     uses: agustisera1/gh-actions/.github/workflows/setup.yml@main
+
   ejecutar-tests:
+    needs: realizar-setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
