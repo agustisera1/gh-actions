@@ -1,26 +1,29 @@
-name: Realizar setup
+name: Setup
 
 on:
   workflow_call:
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Preparar node ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - name: Cachear dependencias
+      id: cache-nodemodules
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-node-modules
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        path: node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
 
     - name: Instalar dependencias
-      run: npm install
-
+      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      uses: agustisera1/gh-actions/.github/workflows/install.yml@main
