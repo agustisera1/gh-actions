@@ -26,4 +26,4 @@ jobs:
 
     - name: Instalar dependencias
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-      uses: agustisera1/gh-actions/.github/workflows/install.yml@main
+      run: npm install
