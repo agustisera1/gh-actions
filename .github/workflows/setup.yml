@@ -1,10 +1,9 @@
-name: Setup
+name: Build
 
-on:
-  workflow_call:
+on: [push, pull_request]
 
 jobs:
-  build:
+  ejecutar-setup:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +26,12 @@ jobs:
     - name: Instalar dependencias
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: npm install
+
+  ejecutar-tests:
+    needs: ejecutar-setup
+    uses: agustisera1/gh-actions/.github/workflows/tests.yml@main
+
+  buildear-proyecto:
+    needs: [ejecutar-tests, ejecutar-setup]
+    uses: agustisera1/gh-actions/.github/workflows/build.yml@main
+
