@@ -1,20 +1,21 @@
 name: Build
 
-on: [workflow_dispatch]
+on: [push, pull_request]
 
 jobs:
+  ejecutar-setup:
+    uses: agustisera1/gh-actions/.github/workflows/setup.yml@main
+
   ejecutar-tests:
+    needs: ejecutar-setup
     uses: agustisera1/gh-actions/.github/workflows/tests.yml@main
 
   buildear-proyecto:
-    needs: ejecutar-tests
+    needs: [ejecutar-tests, ejecutar-setup]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Correr unit tests
+      - name: Buildear proyecto
         run: npm run build

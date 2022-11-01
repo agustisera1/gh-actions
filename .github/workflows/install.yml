@@ -1,0 +1,11 @@
+name: Instalar
+
+on:
+  workflow_call:
+
+jobs:
+  instalar-paquetes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instalar dependencias (package.json)
+        run: npm ci
