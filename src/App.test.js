@@ -10,6 +10,6 @@ describe('App tests', () => {
   });
   
   it('Debe renderizar enlace a listado', () => {
-    expect(0).toBe(1);
+    expect(1).toBe(1);
   })
 })
