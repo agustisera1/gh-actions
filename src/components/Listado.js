@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Listado = () => {
   return (
-    <div data-qa="componente-listado" className="App">
+    <div data-testid="componente-listado" className="App">
       <header className="App-listado">
         <a
           className="App-link"
