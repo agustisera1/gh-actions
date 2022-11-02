@@ -16,7 +16,7 @@ function App() {
         <p>
           <code>Proyecto de prueba para Github Actions</code><br />
           <code data-testid="legajo-alumnos">
-            Legajo: 42XXX - Tisera, Agustín<br />
+            Legajo: 42988 - Tisera, Agustín<br />
             Legajo: 44009 - Kler, Nicolás<br />
             Legajo: 45711 - Leones, Marcos<br />
           </code>

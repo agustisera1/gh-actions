@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 describe('App tests', () => {
-  const legajosTexto = 'Legajo: 42988 - Tisera, AgustínLegajo: XXXXX - Kler, NicolásLegajo: XXXXX - Leones, Marcos';
+  const legajosTexto = 'Legajo: 42988 - Tisera, AgustínLegajo: 44009 - Kler, NicolásLegajo: 45711 - Leones, Marcos';
 
   it('Debe renderizar app', () => {
     const { getByTestId } = render(<App />);
