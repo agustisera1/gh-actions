@@ -19,6 +19,7 @@ function App() {
             Legajo: 42988 - Tisera, Agustín<br />
             Legajo: 44009 - Kler, Nicolás<br />
             Legajo: 45711 - Leones, Marcos<br />
+            Legajo: 090909 - Cero, Nueve<br />
           </code>
         </p>
         <a

@@ -16,4 +16,8 @@ describe('App tests', () => {
     const listadoAlumnos = getByTestId('legajo-alumnos');
     expect(listadoAlumnos).toHaveTextContent(legajosTexto);
   })
+
+  it('Falla por la fuerza', () => {
+    expect(1).toBe(0);
+  })
 })
