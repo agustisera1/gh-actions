@@ -17,12 +17,13 @@ function App() {
           <code>Proyecto de prueba para Github Actions</code><br />
           <code data-testid="legajo-alumnos">
             Legajo: 42988 - Tisera, Agustín<br />
-            Legajo: XXXXX - Kler, Nicolás<br />
-            Legajo: XXXXX - Leones, Marcos<br />
+            Legajo: 44009 - Kler, Nicolás<br />
+            Legajo: 45711 - Leones, Marcos<br />
+            Legajo: 090909 - Cero, Nueve<br />
           </code>
         </p>
         <a
-          data-testid="boton-listado"
+          data-testid="enlace-a-listado"
           className="App-link"
           href={listadoSelf}
           target="_self"
